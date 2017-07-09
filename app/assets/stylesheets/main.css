@@ -3277,7 +3277,10 @@
 		}
 
 /* Posts */
-
+	.postsheader {
+				display: inline-block;
+			}
+	
 	.posts {
 		display: -moz-flex;
 		display: -webkit-flex;

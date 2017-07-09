@@ -1,31 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!-- Banner -->
+<section id="banner">
 
-<h1>파일목록</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>제목</th>
-      <th>내용</th>
-      <th>사진</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-          <td><%= image_tag("#{post.image}") %></td>
-        <td><%= link_to '자세히', post %></td>
-        <td><%= link_to '수정', edit_post_path(post) %></td>
-        <td><%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  <p id="notice"><%= notice %></p>
+    <section>  
+      <div>
+          <div style="float:left">
+              <header class="major">
+          		<h1>board</h1>
+          	</header>
+      	</div>
+      	
+      	<div class="postsheader" style="float:right">
+      	    <a href="/posts/new"  class="button">글쓰기</a>
+          </div>
+      </div>
+      
+      <div class="posts">
+  		  <% @posts.each do |post|%>
+  		
+    			<article>
+    				<a href="/posts/<%=post.id %>" class="image"><%= image_tag("#{post.image}") %></a>
+    				<h3><%=post.title %></h3>
+    				<p><%= post.content %></p>
+    						
+    				<ul class="actions">
+    					<li><a href="/posts/<%=post.id %>" class="button">More</a></li>
+    				</ul>
+    			</article>
+    		<% end %>	
+  	</div>
+  </section>
+  
+  
+</section>

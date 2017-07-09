@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   get '/home/elements'
 
 # get '/home/intro'
-  get '/posts/index'
-  
+  get '/board'=>'posts#index'
+  get '/write_post' => 'posts#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

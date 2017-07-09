@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :posts
-  root :to => 'home#intro'
-  get '/post' => 'posts#index'
-  get '/intro' => 'home#intro'
 
+# root :to => 'home#intro'
+# get '/post' => 'posts#index'
+# get '/intro' => 'home#intro'
 
-  get '/home/intro'
   devise_for :users
   root 'home#index'
   
@@ -13,6 +12,9 @@ Rails.application.routes.draw do
   get '/home/generic'
   get '/home/elements'
 
+# get '/home/intro'
+  get '/posts/index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

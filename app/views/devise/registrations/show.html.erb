@@ -1,0 +1,20 @@
+<h2>MY PAGE</h2>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %><br />
+</p>
+
+<p>
+  <strong>사진:</strong>
+  <%= image_tag("#{current_user.profile_img}") %>
+</p>
+
+    <ul class="actions session_button">
+		<li><a href="/users/edit" class="button">수정</a></li>
+	</ul>
+    
+    

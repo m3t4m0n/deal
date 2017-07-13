@@ -65,4 +65,6 @@ class User < ActiveRecord::Base
     false
   end
   
+  mount_uploader :profile_img, S3Uploader
+  
 end

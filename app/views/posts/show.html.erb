@@ -1,6 +1,4 @@
 
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>제목:</strong>
   <%= @post.title %>
@@ -26,3 +24,26 @@
   <td><%= link_to '돌아가기', posts_path %></td>
   <td><%= link_to '삭제', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
+
+<!-- 댓글 달기 -->
+  <hr>
+    <form style="position:relative;" action ="/posts/reply_create" method="post">
+      <div class="form-group">
+        <input type="hidden" value="<%=@post.id%>" name="post_id"/>
+        <input type="text" class="form-control" name="reply_content" placeholder="댓글">
+      </div>
+  
+      <button type="submit" class="btn btn-default">댓글 쓰기</button>
+    </form>
+        
+        <br>  
+        <%@post.replies.each do |rply|%>
+          <%= rply.content%>
+          <button right:0; class="btn btn-default"><a href ="/posts/reply_update_view/<%=@post.id%>/<%=rply.id%>" style="align-items: right;" >수정</a></button> 
+          <button style="position:relative; right:0;" class="btn btn-default"><a href="/posts/reply_destroy/<%=@post.id%>/<%=rply.id%>" style="align-items: right;">삭제</a></button>
+        <br>
+        <%end%>
+  <hr>
+
+
+<!--댓글 end->

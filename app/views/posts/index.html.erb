@@ -1,35 +1,42 @@
+<script>
+	var path = window.location.pathname;
+	alert(path);
+</script>
+
 <!-- Banner -->
 <section id="banner">
 
-  <p id="notice"><%= notice %></p>
-    <section>  
-      <div>
-          <div style="float:left">
-              <header class="major">
-          		<h1>board</h1>
-          	</header>
-      	</div>
-      	
-      	<div class="postsheader" style="float:right">
-      	    <a href="/posts/new"  class="button">글쓰기</a>
-          </div>
+  <section>
+    <div>
+      <div style="float:left">
+        <header class="major">
+          <h2>거래 게시판</h2>
+        </header>
       </div>
-      
-      <div class="posts">
-  		  <% @posts.each do |post|%>
-  		
-    			<article>
-    				<a href="/posts/<%=post.id %>" class="image"><%= image_tag("#{post.image}") %></a>
-    				<h3><%=post.title %></h3>
-    				<p><%= post.content %></p>
-    						
-    				<ul class="actions">
-    					<li><a href="/posts/<%=post.id %>" class="button">More</a></li>
-    				</ul>
-    			</article>
-    		<% end %>	
-  	</div>
+
+      <div class="postsheader" style="float:right">
+        <a href="/posts/new" class="button">글쓰기</a>
+      </div>
+    </div>
+
+    <div class="posts">
+      <% @posts.each do |post|%>
+
+        <article>
+          <a href="/posts/<%=post.id %>" class="image">
+            <%= image_tag("#{post.image}") %>
+          </a>
+          <h3><%=post.title %></h3>
+          <p>
+            <%= post.content %>
+          </p>
+
+          <ul class="actions">
+            <li><a href="/posts/<%=post.id %>" class="button">More</a></li>
+          </ul>
+        </article>
+        <% end %>
+    </div>
   </section>
-  
-  
+
 </section>

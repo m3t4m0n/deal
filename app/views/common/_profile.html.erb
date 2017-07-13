@@ -1,11 +1,17 @@
 <div class="content_card">
   <div class="card">
-    <div class="firstinfo"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg"/>
+    <div class="firstinfo"><%= image_tag current_user.profile_img %> <!--<img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg"/>-->
       <div class="profileinfo">
-        <h1>Francesco Moustache</h1>
-        <h3>Python Ninja</h3>
+        <h1>Excavator</h1>
+        <h3><%= current_user.email %></h3>
         <p class="bio">Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.</p>
       </div>
     </div>
+    
+    <ul class="actions session_button">
+			<li><a href="/users/sign_out" class="button special">Logout</a></li>
+			<li><a href="#" class="button">MyPage</a></li>
+	  </ul>
+	  
   </div>
 </div>

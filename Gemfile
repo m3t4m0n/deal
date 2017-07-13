@@ -1,16 +1,26 @@
 source 'https://rubygems.org'
 
+# image upload
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 
-# for login
+# for login & social
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'
+
+# 환경 변수 설정
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', :group => :development
+gem 'pg', :group => :production
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

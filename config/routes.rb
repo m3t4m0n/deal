@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  get 'register/info1'
+
+  get 'register/info2'
+
+  get 'visitor/main'
+  
   resources :posts
 
 # root :to => 'home#intro'
 # get '/post' => 'posts#index'
 # get '/intro' => 'home#intro'
 
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
   root 'home#index'
   
   get '/home/index'

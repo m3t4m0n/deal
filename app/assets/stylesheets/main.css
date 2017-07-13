@@ -1,9 +1,8 @@
 /* font-awesome */
-@import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 
 /* 나눔고딕 폰트 */
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /*
 	Editorial by HTML5 UP
@@ -3737,11 +3736,8 @@
 					left: 0;
 					overflow-x: hidden;
 					overflow-y: auto;
-<<<<<<< HEAD
-					position: absolute;
-=======
+				/*	position: absolute; */
 					position: relative;
->>>>>>> c3a6203f0998f034f0d7038d1e61604e6ad9f4f2
 					top: 0;
 				}
 

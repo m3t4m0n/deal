@@ -17,5 +17,4 @@ class ApplicationController < ActionController::Base
     @devise_mapping ||= Devise.mappings[:user]
   end
   
-
 end

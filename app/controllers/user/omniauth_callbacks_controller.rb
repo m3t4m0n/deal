@@ -50,7 +50,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def after_sign_in_path_for(resource)
     auth = request.env['omniauth.auth']
     @identity = Identity.find_for_oauth(auth)
-    @user = User.find(current_user.id)
+    @user = User.find(@current_user.id)
     
     if @user.persisted?
       if @identity.provider == "kakao"

@@ -1,35 +1,35 @@
-
-<p>
-  <strong>제목:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>내용:</strong>
-  <%= @post.content %>
-</p>
-<p>
-  <strong>게시물 번호:</strong>
-  <%= @post.id %>번
-</p>
-
-<p>
-  <strong>사진:</strong>
-  <%= image_tag("#{@post.image}") %>
-</p>
-
-
-<tr>
-  <td><%= link_to '수정', edit_post_path(@post) %></td>
-  <td><%= link_to '돌아가기', posts_path %></td>
-  <td><%= link_to '삭제', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<section>
+  <p>
+    <strong>제목:</strong>
+    <%= @post.title %>
+  </p>
+  
+  <p>
+    <strong>내용:</strong>
+    <%= @post.content %>
+  </p>
+  <p>
+    <strong>게시물 번호:</strong>
+    <%= @post.id %>번
+  </p>
+  
+  <p>
+    <strong>사진:</strong>
+    <%= image_tag("#{@post.image}") %>
+  </p>
+  
+  
+  <tr>
+    <td><%= link_to '수정', edit_post_path(@post) %></td>
+    <td><%= link_to '돌아가기', posts_path %></td>
+    <td><%= link_to '삭제', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 
 <!-- 댓글 달기 -->
   <hr>
     <form style="position:relative;" action ="/posts/reply_create" method="post">
       <div class="form-group">
-        <input type="hidden" value="<%=@post.id%>" name="post_id"/>
+        <input type="hidden" value="<%=@post.id%>" name="postㄴ_id"/>
         <input type="text" class="form-control" name="reply_content" placeholder="댓글">
       </div>
   
@@ -44,6 +44,5 @@
         <br>
         <%end%>
   <hr>
-
-
+</section>
 <!--댓글 end->

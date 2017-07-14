@@ -29,7 +29,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
-        @user = User.find_for_oauth(env["omniauth.auth"], @current_user)
+        @user = User.find_for_oauth(env["omniauth.auth"], current_user)
         
         if @user.persisted?
           sign_in_and_redirect @user, event: :authentication
@@ -50,7 +50,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def after_sign_in_path_for(resource)
     auth = request.env['omniauth.auth']
     @identity = Identity.find_for_oauth(auth)
-    @user = User.find(@current_user.id)
+    @user = User.find(current_user.id)
     
     if @user.persisted?
       if @identity.provider == "kakao"

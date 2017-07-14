@@ -12,11 +12,9 @@ Rails.application.routes.draw do
 # get '/intro' => 'home#intro'
 
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
-  get '/home/intro'
-  devise_for :users
-  as :user do
-    get 'users/show' => 'devise/registrations#show'
-  end
+# as :user do
+#    get 'users/show' => 'devise/registrations#show'
+#  end
 
   root 'home#index'
   
